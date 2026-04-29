@@ -1,0 +1,4 @@
+supabase>=2.29.0
+requests>=2.33.1
+python-dotenv>=1.2.2
+discord-webhook>=1.4.1
