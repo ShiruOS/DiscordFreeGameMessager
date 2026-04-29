@@ -3,6 +3,8 @@ name: News automation
 # This trigger allows you to start the workflow manually from the Actions tab
 on:
   workflow_dispatch:
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   run-python-task:
