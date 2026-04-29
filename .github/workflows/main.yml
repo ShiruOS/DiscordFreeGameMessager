@@ -37,4 +37,4 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           TABLE: ${{ secrets.TABLE }}
-        run: python main.py # Replace main.py with your actual filename
+        run: python src/announcer/main.py 
