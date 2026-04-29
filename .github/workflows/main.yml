@@ -30,9 +30,9 @@ jobs:
       - name: Run Python Script
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          CRASH_BOY: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          NEWS_API: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          SUPABASE_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          SUPABASE_KEY: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          TABLE: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          CRASH_BOY: ${{ secrets.CRASH_BOY }}
+          NEWS_API: ${{ secrets.NEWS_API }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          TABLE: ${{ secrets.TABLE }}
         run: python main.py # Replace main.py with your actual filename
