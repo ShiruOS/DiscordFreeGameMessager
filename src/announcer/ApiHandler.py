@@ -5,6 +5,7 @@ from discord_webhook import DiscordWebhook
 
 
 def GetNews(URL: str):
+    """Fecthes data from api then parses into useable format"""
     data = None
     content = []
 
@@ -38,6 +39,7 @@ def GetNews(URL: str):
 
 
 def SendToDiscord(content: dict, DISCORD_WEBHOOK_URL: str):
+    """Produces a useable message that uses dict and sends it to discord"""
     print("sending news to discod")
     msg = (
         f"> **Game:** {content['title']}\n"
@@ -51,5 +53,6 @@ def SendToDiscord(content: dict, DISCORD_WEBHOOK_URL: str):
 
 
 def CrashBoy(msg: str, URL: str):
+    """Sends Crashboy message"""
     webhook = DiscordWebhook(url=URL, content=msg)
     webhook.execute()
