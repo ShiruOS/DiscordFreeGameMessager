@@ -38,7 +38,13 @@ def GetNews(URL: str):
     return None
 
 
-def SendToDiscord(content: dict, DISCORD_WEBHOOK_URL: str):
+def SendMsg(msg: str, URL: str):
+    """Sends message to discord"""
+    webhook = DiscordWebhook(url=URL, content=msg)
+    webhook.execute()
+
+
+def Post(content: dict, DISCORD_WEBHOOK_URL: str):
     """Produces a useable message that uses dict and sends it to discord"""
     print("sending news to discod")
     msg = (
@@ -47,12 +53,10 @@ def SendToDiscord(content: dict, DISCORD_WEBHOOK_URL: str):
         f"**[CLAIM HERE]({content['open_giveaway_url']})**\n"
         f"*Expires {content['end']}*"
     )
-    webhook = DiscordWebhook(url=DISCORD_WEBHOOK_URL, content=msg)
-    webhook.execute()
+    SendMsg(msg, DISCORD_WEBHOOK_URL)
     time.sleep(1)
 
 
-def CrashBoy(msg: str, URL: str):
-    """Sends Crashboy message"""
-    webhook = DiscordWebhook(url=URL, content=msg)
-    webhook.execute()
+def CheckPlatform(platformData: str, PLATFORMS):
+    platformData = platformData.lower()
+    return any(platform in platformData for platform in PLATFORMS)

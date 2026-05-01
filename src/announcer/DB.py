@@ -18,11 +18,9 @@ def GetData(column):
     data = []
     res = supabase.table(tableName).select(column).execute()
 
-    for i in (
-        res.data
-    ):  # Gets the data in form of dict nested in array and coverts into array of id
+    for i in res.data:  # Gets the data in form of dict nested in array and coverts into array of id
         data.append(i[column])
-    print("Data recived from db")
+    print(column, "data recived from db")
     return data
 
 
@@ -30,9 +28,7 @@ def InsertData(data: dict):
     """Enters new row into the db"""
     print("Inserting data")
     end: str = data["end"]
-    if (
-        "N" in end
-    ):  # Checks if any game has expiry date as N/A and if yes then sets it to a week in future
+    if ("N" in end):  # Checks if any game has expiry date as N/A and if yes then sets it to a week in future
         today = datetime.now()
         end = (today + timedelta(days=7)).strftime("%Y-%m-%d")
     else:

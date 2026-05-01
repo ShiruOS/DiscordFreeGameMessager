@@ -1,0 +1,4 @@
+{
+  "source": "https://www.gamerpower.com/api/giveaways?platform=pc&type=game",
+  "platforms": ["steam", "gog", "epic"]
+}
