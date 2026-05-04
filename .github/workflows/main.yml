@@ -3,7 +3,7 @@ name: Manual and Scheduled announcment
 on:
   workflow_dispatch:
   schedule:
-    - cron: 30 0 * * *
+    - cron: 23 5 * * *
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
